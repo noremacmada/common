@@ -1,5 +1,11 @@
 <div>title {{this.title}}</div>
-
+<pop-up
+  [title]="'Icons'"
+>
+  <div class="pop-up-body">
+    <font-awesome-free-icon-list></font-awesome-free-icon-list>
+  </div>
+</pop-up>
 <pop-up #popUp
   [title]="'Declarative Pop Up'"
   (onBeforeShow)="this.onOpen()"

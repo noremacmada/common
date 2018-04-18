@@ -52,23 +52,23 @@ export class FeedbackInputComponent implements OnInit {
     switch(this._status){
       case "error":
         this.feedback = "has-error";
-        this.feedbackIcon = "glyphicon-remove";
+        this.feedbackIcon = "exclamation-triangle";
         this.alert = "alert-danger";
         break;
       case "warning":
         this.feedback = "has-warning";
-        this.feedbackIcon = "glyphicon-warning-sign";
+        this.feedbackIcon = "minus-square";
         this.alert = "alert-warning";
         break;
       case "success":
         this.feedback = "has-success";
-        this.feedbackIcon = "glyphicon-okay";
+        this.feedbackIcon = "plus-square";
         this.alert = "alert-success";
         break;
       case "default":
       default:
         this.feedback = "has-default";
-        this.feedbackIcon = "glyphicon-default";
+        this.feedbackIcon = "font-awesome";
         this.alert = "alert-default";
         this.message = "";
         break;

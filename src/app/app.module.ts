@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { FeedbackInputComponent } from './feedback-input/feedback-input.component';
+import { FontAwesomeFreeIconListComponent } from './font-awesome-free-icon-list/font-awesome-free-icon-list.component';
 
 
 
@@ -13,12 +15,14 @@ import { FeedbackInputComponent } from './feedback-input/feedback-input.componen
   declarations: [
     AppComponent,
     PopUpComponent,
-    FeedbackInputComponent
+    FeedbackInputComponent,
+    FontAwesomeFreeIconListComponent
   ],
   imports: [
     BrowserModule,
     ModalModule.forRoot(),
-    FormsModule
+    FormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
