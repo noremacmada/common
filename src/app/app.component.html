@@ -1,39 +1,46 @@
-<div>title {{this.title}}</div>
-<pop-up
-  [title]="'Icons'"
->
-  <div class="pop-up-body">
-    <font-awesome-free-icon-list></font-awesome-free-icon-list>
+<div class="jumbotron d-flex justify-content-center"><h1>{{this.title}}</h1></div>
+<div class="d-flex flex-row justify-content-center">
+  <div class="p-2">
+    <pop-up #popUp
+      [title]="'Edit title'"
+      (onBeforeShow)="this.onOpen()"
+      (onSaveAfterHide)="this.onSave()"
+    >
+      <div class="pop-up-body">
+        <div>
+          <label>titleCopy</label>
+          <input [(ngModel)]="this.titleCopy"  type="text"/>
+        </div>
+      </div>
+      <div class="pop-up-footer">
+        <button type="button" class="btn btn-secondary" aria-label="Close" (click)="popUp.close()">Close</button>
+        <button type="button" class="btn btn-primary" aria-label="Save" (click)="popUp.save()">Save</button>
+      </div>
+    </pop-up>
   </div>
-</pop-up>
-<pop-up #popUp
-  [title]="'Declarative Pop Up'"
-  (onBeforeShow)="this.onOpen()"
-  (onSaveAfterHide)="this.onSave()"
->
-  <div class="pop-up-body">
-    <div>
-      <label>titleCopy</label>
-      <input [(ngModel)]="this.titleCopy"  type="text"/>
+  <div class="p-2">
+    <pop-up [title]="'Icons'">
+      <div class="pop-up-body">
+        <font-awesome-free-icon-list></font-awesome-free-icon-list>
+      </div>
+    </pop-up>
+  </div>
+</div>
+<div class="flex-row justify-content-center">
+  <div class="p-6">
+    <div class="p-2 border border-primary">placeholder value: {{this.feedbackInputValue}}</div>
+    <div class="p-2 border border-secondary">Type "error", "warning", "success", or something else:
+      <feedback-input
+        [type]="'text'"
+        [name]="'name'"
+        [placeholder]="'placeholder'"
+        [glyphicon]="'glyphicon-tags'"
+        [(value)]="this.feedbackInputValue"
+        (blur)="this.onFeedbackInputBlur(this.feedbackInputValue)"
+        [status]="this.feedbackInputStatus"
+        [message]="this.feedbackInputMessage"
+      >
+      </feedback-input>
     </div>
   </div>
-  <div class="pop-up-footer">
-    <button type="button" class="btn btn-secondary" aria-label="Close" (click)="popUp.close()">Close</button>
-    <button type="button" class="btn btn-primary" aria-label="Save" (click)="popUp.save()">Save</button>
-  </div>
-</pop-up>
-
-<div>feedbackInputValue {{this.feedbackInputValue}}</div>
-<div>feedbackInputStatus {{this.feedbackInputStatus}}</div>
-<div>feedbackInputMessage {{this.feedbackInputMessage}}</div>
-<feedback-input
-  [type]="'text'"
-  [name]="'name'"
-  [placeholder]="'placeholder'"
-  [glyphicon]="'glyphicon-tags'"
-  [(value)]="this.feedbackInputValue"
-  (blur)="this.onFeedbackInputBlur(this.feedbackInputValue)"
-  [status]="this.feedbackInputStatus"
-  [message]="this.feedbackInputMessage"
->
-</feedback-input>
+</div>

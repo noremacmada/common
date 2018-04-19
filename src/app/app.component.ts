@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Adam Cameron';
   titleCopy;
   onOpen(){
     this.titleCopy = this.title;
@@ -18,10 +18,10 @@ export class AppComponent {
   feedbackInputStatus : string = 'initStatus';
   feedbackInputMessage : string = 'initMessage';
   valueFeedbackStatusMappings : object = {
-    'valueError':'error',
-    'valueWarning':'warning',
-    'valueSuccess':'success',
-    'valueDefault':'default'
+    'error':'error',
+    'warning':'warning',
+    'success':'success',
+    'default':'default'
   }
   onFeedbackInputBlur(value){
     this.feedbackInputStatus = this.valueFeedbackStatusMappings[value];
