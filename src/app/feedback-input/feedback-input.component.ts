@@ -36,6 +36,7 @@ export class FeedbackInputComponent implements OnInit {
     this.setFeedbackClasses();
   }
 
+  isAlertVisible: boolean;
   feedback: string;
   feedbackIcon: string;
   alert: string;
@@ -45,7 +46,13 @@ export class FeedbackInputComponent implements OnInit {
   ngOnInit() {}
 
   onBlur(): void {
+    this.isAlertVisible = true;
     this.blur.emit();
+  }
+
+
+  alertDismissClick(): void {
+    this.isAlertVisible = false;
   }
 
   setFeedbackClasses():void {
@@ -53,23 +60,23 @@ export class FeedbackInputComponent implements OnInit {
       case "error":
         this.feedback = "has-error";
         this.feedbackIcon = "exclamation-triangle";
-        this.alert = "alert-danger";
+        this.alert = "danger";
         break;
       case "warning":
         this.feedback = "has-warning";
         this.feedbackIcon = "minus-square";
-        this.alert = "alert-warning";
+        this.alert = "warning";
         break;
       case "success":
         this.feedback = "has-success";
         this.feedbackIcon = "plus-square";
-        this.alert = "alert-success";
+        this.alert = "success";
         break;
       case "default":
       default:
         this.feedback = "has-default";
         this.feedbackIcon = "font-awesome";
-        this.alert = "alert-default";
+        this.alert = "alert-info";
         this.message = "";
         break;
     }

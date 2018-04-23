@@ -1,11 +1,12 @@
-<div [ngClass]="'input-group d-flex flex-row has-feedback ' + this.feedback">
-<!--  <div class="p-1"> -->
-    <span class="input-group-addon">
-      <fa [hidden]="this.glyphicon == ''" name="{{this.glyphicon}}"></fa>
-      <label [hidden]="this.label == ''">{{this.label}}</label>
-    </span>
-<!--  </div> -->
-<!--  <div class="p-1">  -->
+<div class="feedback-input">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <fa [hidden]="this.glyphicon == ''" name="{{this.glyphicon}}"></fa>
+        &nbsp;
+        <span class="align-middle" [hidden]="this.label == ''">{{this.label}}</span>
+      </span>
+    </div>
     <input
       class="form-control"
       type="{{this.type}}"
@@ -14,14 +15,16 @@
       [(ngModel)]="this.value"
       (blur)="this.onBlur()"
     />
-<!--  </div> -->
-<!--  <div class="p-1"> -->
     <div
-      [hidden]="this.message == '' && this.feedbackIcon==''"
-      [ngClass]="'d-inline form-control-feedback feedback align-middle alert ' + this.alert"
+      class="input-group-append input-group-text"
+      [hidden]="!this.isAlertVisible"
+      [ngClass]="'border border-' + this.alert + ' rounded-right'"
     >
       <fa name="{{this.feedbackIcon}}"></fa>
+      &nbsp;
       {{this.message}}
+      &nbsp;
+      <span class="text-right" (click)="this.alertDismissClick()">&times;</span>
     </div>
-<!--  <div> -->
+  </div>
 </div>

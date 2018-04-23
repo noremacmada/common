@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
+import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { FontAwesomeFreeIconListComponent } from './font-awesome-free-icon-list/
   imports: [
     BrowserModule,
     ModalModule.forRoot(),
+    AlertModule.forRoot(),
     FormsModule,
     AngularFontAwesomeModule
   ],
