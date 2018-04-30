@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
 import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HighlightJsModule } from 'ngx-highlight-js';
+
 
 import { AppComponent } from './app.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
@@ -24,7 +26,8 @@ import { FontAwesomeFreeIconListComponent } from './font-awesome-free-icon-list/
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HighlightJsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
